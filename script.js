@@ -1,11 +1,13 @@
 const btn = document.querySelector(".btn");
 
 const scores = [0, 0];
+const players = document.querySelectorAll('.player-container');
 let currentPlayer = 0;
 const diceImage = document.querySelector(".dice-image");
 const timeout = 100;
 
 const reset = function () {
+  players[currentPlayer].style.backgroundColor = 'slateblue';
   currentPlayer = 0;
   scores.forEach(function (score, index) {
     scores[index] = 0;
@@ -14,6 +16,8 @@ const reset = function () {
 };
 
 const play = function () {
+  btn.setAttribute('disabled', true);
+  btn.classList.add('btn-disabled');
   setTimeout(function () {
     if (scores[0] >= 100 || scores[1] >= 100) {
       reset();
@@ -32,6 +36,9 @@ const play = function () {
     console.log(scores);
 
     if (scores[currentPlayer] >= 100) {
+      players[currentPlayer].style.backgroundColor = 'green';
+      btn.classList.remove('btn-disabled');
+      btn.removeAttribute('disabled');
       return;
     }
 
