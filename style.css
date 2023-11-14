@@ -67,6 +67,14 @@ body {
   margin-top: 10px;
   font-size: 1.7rem;
   border: 0;
-  background-color: inherit;
+  background-color: #fff;
+  padding: 10px 40px;
   cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn.btn-disabled {
+  background-color: red;
+  color: #fff;
+  cursor:not-allowed;
 }
