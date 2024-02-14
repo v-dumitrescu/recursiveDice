@@ -23,7 +23,7 @@ const play = function () {
       reset();
     }
     const randomDice = Math.floor(Math.random() * 6) + 1;
-    diceImage.setAttribute("src", "dice-" + randomDice + ".png");
+    diceImage.setAttribute("src", "images/dice-" + randomDice + ".png");
 
     if (randomDice % 2 === 1) {
       currentPlayer === 0 ? currentPlayer++ : currentPlayer--;
